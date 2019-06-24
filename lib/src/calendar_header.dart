@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'default_styles.dart' show defaultHeaderTextStyle;
 
 class CalendarHeader extends StatelessWidget {
@@ -15,7 +16,8 @@ class CalendarHeader extends StatelessWidget {
       @required this.onLeftButtonPressed,
       @required this.onRightButtonPressed,
       this.isTitleTouchable,
-      @required this.onHeaderTitlePressed});
+      @required this.onHeaderTitlePressed,
+      this.headerColor});
 
   final String headerTitle;
   final EdgeInsetsGeometry headerMargin;
@@ -23,6 +25,7 @@ class CalendarHeader extends StatelessWidget {
   final TextStyle headerTextStyle;
   final bool showHeaderButtons;
   final Color headerIconColor;
+  final Color headerColor;
   final Widget leftButtonIcon;
   final Widget rightButtonIcon;
   final VoidCallback onLeftButtonPressed;
@@ -35,12 +38,14 @@ class CalendarHeader extends StatelessWidget {
 
   Widget _leftButton() => IconButton(
         onPressed: onLeftButtonPressed,
-        icon: leftButtonIcon ?? Icon(Icons.chevron_left, color: headerIconColor),
+        icon:
+            leftButtonIcon ?? Icon(Icons.chevron_left, color: headerIconColor),
       );
 
   Widget _rightButton() => IconButton(
         onPressed: onRightButtonPressed,
-        icon: rightButtonIcon ?? Icon(Icons.chevron_right, color: headerIconColor),
+        icon: rightButtonIcon ??
+            Icon(Icons.chevron_right, color: headerIconColor),
       );
 
   Widget _headerTouchable() => FlatButton(
@@ -51,6 +56,7 @@ class CalendarHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) => showHeader
       ? Container(
+          color: headerColor,
           margin: headerMargin,
           child: DefaultTextStyle(
               style: getTextStyle,
