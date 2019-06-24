@@ -5,18 +5,19 @@ import 'package:flutter_calendar_carousel/src/default_styles.dart'
 import 'package:intl/intl.dart';
 
 class WeekdayRow extends StatelessWidget {
-  WeekdayRow(
-      this.firstDayOfWeek,
+  WeekdayRow(this.firstDayOfWeek,
       {@required this.showWeekdays,
       @required this.weekdayFormat,
       @required this.weekdayMargin,
       @required this.weekdayTextStyle,
+      @required this.weekendTextStyle,
       @required this.localeDate});
 
   final bool showWeekdays;
   final WeekdayFormat weekdayFormat;
   final EdgeInsets weekdayMargin;
   final TextStyle weekdayTextStyle;
+  final TextStyle weekendTextStyle;
   final DateFormat localeDate;
   final int firstDayOfWeek;
 
@@ -28,7 +29,7 @@ class WeekdayRow extends StatelessWidget {
             style: defaultWeekdayTextStyle,
             child: Text(
               weekDay,
-              style: weekdayTextStyle,
+              style: weekDay == "Min" ? weekendTextStyle : weekdayTextStyle,
             ),
           ),
         ),
@@ -73,8 +74,8 @@ class WeekdayRow extends StatelessWidget {
 
     /// because of number of days in a week is 7, so it would be easier to count it til 7.
     for (var i = firstDayOfWeek, count = 0;
-    count < 7;
-    i = (i + 1) % 7, count++) {
+        count < 7;
+        i = (i + 1) % 7, count++) {
       String weekDay;
 
       switch (weekdayFormat) {
