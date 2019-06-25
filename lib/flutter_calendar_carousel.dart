@@ -468,7 +468,7 @@ class _CalendarState<T> extends State<CalendarCarousel<T>> {
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(2)),
                                         color:
-                                            Color(0xFF003865).withOpacity(0.8),
+                                            Color(0xFF9C27B0).withOpacity(0.8),
                                       ),
                                       width: 35.0,
                                       height: 4.0,
