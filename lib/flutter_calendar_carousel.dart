@@ -410,7 +410,6 @@ class _CalendarState<T> extends State<CalendarCarousel<T>> {
                                   ),
                                 ),
                       child: Stack(
-                        fit: StackFit.expand,
                         children: <Widget>[
                           new Center(
                             child: DefaultTextStyle(
@@ -460,6 +459,23 @@ class _CalendarState<T> extends State<CalendarCarousel<T>> {
                               ),
                             ),
                           ),
+                          isToday == true
+                              ? Padding(
+                                  padding: const EdgeInsets.only(top: 20.0),
+                                  child: Center(
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(2)),
+                                        color:
+                                            Color(0xFF003865).withOpacity(0.8),
+                                      ),
+                                      width: 35.0,
+                                      height: 4.0,
+                                    ),
+                                  ),
+                                )
+                              : Container(),
                           widget.markedDatesMap != null
                               ? _renderMarkedMapContainer(now)
                               : _renderMarked(now),
