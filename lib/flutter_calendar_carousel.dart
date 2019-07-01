@@ -86,6 +86,7 @@ class CalendarCarousel<T> extends StatefulWidget {
   CalendarCarousel({
     this.viewportFraction = 1.0,
     this.prevDaysTextStyle,
+    this.todayColor,
     this.daysTextStyle,
     this.nextDaysTextStyle,
     this.prevMonthDayBorderColor = Colors.transparent,
