@@ -24,6 +24,7 @@ class CalendarCarousel<T> extends StatefulWidget {
   final Color prevMonthDayBorderColor;
   final Color thisMonthDayBorderColor;
   final Color nextMonthDayBorderColor;
+  final Color todayColor;
   final double dayPadding;
   final double height;
   final double width;
@@ -468,7 +469,7 @@ class _CalendarState<T> extends State<CalendarCarousel<T>> {
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(2)),
                                         color:
-                                            Color(0xFF9C27B0).withOpacity(0.8),
+                                            Color(widget.todayColor).withOpacity(0.8),
                                       ),
                                       width: 35.0,
                                       height: 4.0,
