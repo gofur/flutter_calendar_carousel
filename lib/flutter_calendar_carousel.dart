@@ -473,7 +473,7 @@ class _CalendarState<T> extends State<CalendarCarousel<T>> {
                                             widget.todayColor,
                                       ),
                                       width: 35.0,
-                                      height: 4.0,
+                                      height: 2.0,
                                     ),
                                   ),
                                 )
