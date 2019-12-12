@@ -11,7 +11,7 @@ dependencies:
   intl: ^0.16.0
   flutter:
     sdk: flutter
-  date_utils: ^0.1.0
+  date_utils: ^0.1.0+2
 
 dev_dependencies:
   flutter_test:
